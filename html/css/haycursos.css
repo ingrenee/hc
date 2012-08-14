@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	background-color: #f3f3f3;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+div.lienzo
+{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+div#menu
+{
+	line-height: 38px;
+	background-image: url(../images/fondo_menu.png);
+	background-position: left top;
+	height: 38px;
+}
+
+div#menu div.pagina
+{
+	width: 1000px;
+}
+
+div.pagina
+{
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+div#cabeza
+{}
+
+div#cabeza div.pagina
+{
+	width: 1000px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+div#cabeza div.pagina h1 a
+{
+	font-size: 24px;
+	color: #074f81;
+	text-decoration: none;
+}
+
+div#cuerpo
+{}
+
+div#cuerpo div.pagina
+{
+	width: 1000px;
+	padding-top: 20px;
+}
+
+div#cuerpo div.pagina div#c1
+{
+	float: left;
+	width: 30%;
+}
+
+
+div.modulos
+{}
+
+div.modulos h2 a
+{
+	font-size: 18px;
+	color: #069;
+	text-decoration: none;
+}
+
+div.modulos h2 a:hover
+{
+	color: #F60;
+}
+
+div.modulos div.submodulo
+{
+	display: block;
+	overflow: hidden;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style: dotted;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-bottom-color: #FFF;
+	border-left-color: #FFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.modulos div.submodulo h2
+{
+	font-size: 18px;
+	color: #323232;
+}
+
+div.modulos div.submodulo ul
+{}
+
+div.modulos div.submodulo ul li
+{}
+
+div.modulos div.submodulo ul li a
+{
+	font-size: 14px;
+	color: #069;
+	text-decoration: none;
+}
+
+div.modulos div.submodulo ul li a:hover
+{
+	color: #09C;
+}
+a.ayuda
+{
+	display: inline-block;
+	background-image: url(../images/iconic/raster/cyan/info_8x16.png);
+	background-position: center center;
+	padding: 0px;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 10px;
+	margin-right: 3px;
+}
+div.fila2
+{
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	overflow: hidden;
+	font-size: 12px;
+}
+div.fila2 div.colu_1
+{
+	float: left;
+	font-size: 12px;
+	width: 150px;
+	text-align: left;
+	font-weight: bold;
+}
+
+div.fila2 div.colu_2
+{
+	float: left;
+}
+div#cuerpo div.pagina div#c2
+{
+	float: right;
+	width: 69%;
+	float: left;
+
+}
+
+div#cuerpo div.pagina div#c2 div.bloque
+{
+	display: block;
+	overflow: hidden;
+}
+
+div.bloque h2
+{
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+div.bloque div.fila
+{}
+
+a.tool2
+{
+	display: inline-block;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 10px;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	background-color: #069;
+}
+a.agregar2
+{
+	background-image: url(../images/iconic/raster/gray_light/plus_alt_16x16.png);
+}
+
+a.agregar2:hover
+{
+	background-image: url(../images/iconic/raster/cyan/plus_alt_16x16.png);
+}
+
+a.listar2
+{
+	background-image: url(../images/iconic/raster/gray_light/list_16x14.png);
+}
+
+a.listar2:hover
+{
+	background-image: url(../images/iconic/raster/cyan/list_16x14.png);
+}
+
+
+a.tool
+{
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 25px;
+	padding-right: 3px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	line-height: normal;
+}
+
+a.agregar
+{
+	background-image: url(../images/iconic/raster/gray_light/plus_alt_16x16.png);
+}
+
+a.agregar:hover
+{
+	background-image: url(../images/iconic/raster/cyan/plus_alt_16x16.png);
+}
+
+a.listar
+{
+	background-image: url(../images/iconic/raster/gray_light/list_16x14.png);
+}
+
+a.listar:hover
+{
+	background-image: url(../images/iconic/raster/cyan/list_16x14.png);
+}
+
+div#pie
+{}
+
+div#pie div.pagina
+{
+	width: 1000px;
+}
+
+
+/*-------*/
+
+div.login
+{
+	background-image: url(../images/fondo_cuadros.jpg);
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 5px;
+}
+
+div.login h1
+{
+	font-size: 18px;
+	color: #FFF;
+}
+div.login h2
+{
+	font-size: 14px;
+	color: #FFF;
+}
+
+div.login  div.fila
+{
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+div.login  div.fila input
+{
+	border: 1px solid #FFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 90%;
+}
+
+div.login  div.fila div.caption
+{
+	color: #FFF;
+}
+div.error
+{
+	color: #FFF;
+	font-size: 12px;
+	background-color: #F00;
+}

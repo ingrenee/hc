@@ -1,0 +1,1 @@
+Usted no tiene permiso para editar esta publicación/

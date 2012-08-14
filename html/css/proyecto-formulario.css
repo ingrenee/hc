@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.formulario
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-left: 20px;
+}
+.error
+{
+	color: #F00;
+}
+div.formulario h1
+{}
+
+div.formulario h1 
+{}
+
+div.formulario div.fila
+{}
+div.formulario div.fila div.colu_1,
+div.formulario div.fila div.colu_2
+{
+	display: block;
+	text-align: left;
+	overflow: hidden;
+	height: auto;
+	width: 100%;
+}
+
+
+div.formulario div.fila div.colu_1
+{
+	font-size: 18px;
+	color: #666;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+}
+div.formulario div.fila h2
+{}
+div.formulario div.fila input[type=checkbox]
+{
+	border: 3px solid #CCC;
+	padding: 2px;
+	margin-right: 3px;
+}
+div.formulario div.fila input[type=text]
+{
+	padding: 5px;
+	border: 1px solid #CCC;
+	width: 90%;
+}
+a.ayuda
+{
+	background-image: url(../images/gray_18/help.png);
+	display: inline-block;
+	height: 100%;
+	width: 18px;
+	text-decoration: none;
+	margin-right: 10px;
+	float: left;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
