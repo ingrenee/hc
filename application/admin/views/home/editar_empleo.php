@@ -10,45 +10,9 @@
 <script>
 
 
-function funcion_cuota01(){
-
-var entradas_ID=document.getElementById('entradas_ID').value;
-ObtenerDatos('index.php?c=EAdmin&a=listar_carreras&entradas_ID='+entradas_ID,'panel_centro');
-
-
-}
 
 
 	
-function cambiar(v)
-{
-if(v!="0")
-{
-document.getElementById('ignorar_salario_temp').disabled=true;
-}else
-{
-
-document.getElementById('ignorar_salario_temp').disabled=false;
-
-}
-
-
-
-document.getElementById('salario').value=v;
-document.getElementById('ignorar_salario_temp').value=v;
-}
-function copiar()
-{
-
-document.getElementById('edadb').value=document.getElementById('edada').value;
-}
-
-function cambiar2()
-{
-
-document.getElementById('salario').value=document.getElementById('ignorar_salario_temp').value;
-}
-
 var funArray=new Array();
 var reqArray=new Array();
 var funIndice=0;
@@ -192,7 +156,7 @@ document.getElementById(ulul).removeChild(id);
 
 <h2>Editar Oferta de Empleo</h2>
 <form id="form1" name="form1" method="post" action="<?PHP
-site_url('home/editar_empleo/'.$empleo_ID)?>">
+site_url('home/editar_entrada/'.$entrada_ID)?>">
   
   
   <?PHP $this->load->view('home/formulario');?>
@@ -250,7 +214,7 @@ alert('Ingrese la informacion en el cuadro de texto inferior.');
 document.getElementById('ignorar_funcion').focus();
 }
 }
-document.getElementById('modalidades_ID').value="<?PHP echo $empleo['modalidades_ID'];?>";
+
 
 </script>
 

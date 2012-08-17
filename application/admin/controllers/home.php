@@ -140,7 +140,7 @@ endif;
 
 function listar()
 
-{$tmp=$this->empleo->listar();
+{$tmp=$this->entradas->listar();
 
 
 
@@ -202,44 +202,6 @@ function listar()
 
 
 
-	function edada($str)
-
-
-
-	{
-
-
-
-		if($str>$this->input->post('edadb')):
-
-
-
-		$this->form_validation->set_message('edada', 'El %s es mayor a la edad superior');
-
-
-
-			return FALSE;
-
-
-
-			else:
-
-
-
-			return true;
-
-
-
-		endif;
-
-
-
-		
-
-
-
-		}
-
 
 
 		
@@ -286,7 +248,7 @@ function listar()
 
 
 
-	function editar_empleo()
+	function editar_entrada()
 
 
 
@@ -310,127 +272,16 @@ function listar()
 
 
 
-	    $this->form_validation->set_rules('nombre_empresa', 'Nombre de empresa', 'required');
+
 
 
 
 		$this->form_validation->set_rules('titulo', 'Titulo del empleo', 'required');
 
 		$this->form_validation->set_rules('categoria', 'categoria del empleo', 'required');
-
-
-
 	    $this->form_validation->set_rules('email_contacto', 'Email de contacto', 'required|valid_email');
-
-
-
-	    $this->form_validation->set_rules('vacantes', 'vacantes', 'required|numeric|is_natural_no_zero');
-
-
-
-	    $this->form_validation->set_rules('modalidades_ID', 'Modalidad del empleo', 'required|numeric');		
-
-
-
-
-
-
-
-	 
-
-
-
-	  		$this->form_validation->set_rules('email_asunto', 'Asunto en email', 'trim');	
-
-
-
-	 
-
-
-
-	 //   $this->form_validation->set_rules('experiencia', 'Tiempo de experiencia', 'numeric');				
-
-
-
-	//	if(isset($_POST['experiencia']) && $_POST['experiencia']>0)
-
-
-
-	 //   $this->form_validation->set_rules('experiencia_tipo', 'Tipo de experiencia', 'required');						
-
-
-
-		
-
-
-
-		
-
-
-
-	//    $this->form_validation->set_rules('edada', 'Rango de edades (edad inferior)', 'required|is_natural_no_zero|callback_edada');								
-
-
-
-	 //   $this->form_validation->set_rules('edadb', 'Rango de edades (edad superior)', 'required|is_natural_no_zero');										
-
-
-
-								
-
-
-
-	    $this->form_validation->set_rules('sexo', 'genero', 'required');										
-
-
-
-	   // $this->form_validation->set_rules('salario_tipo', 'modena del salario', 'required');										
-
-
-
-		
-
-
-
-										
-
-
-
-	 //   $this->form_validation->set_rules('salario_2', 'Tipo del salario', 'required');														
-
-
-
-	    $this->form_validation->set_rules('descripcion', 'Descripcion del empleo', 'required');																
-
-
-
-$this->form_validation->set_rules('salario', 'Monto del salario', 'trim|required');	
-
-/*
-
-		if(isset($_POST['salario_2']) && $_POST['salario_2']==3):
-
-
-
-
-
-
-
-													
-
-
-
-		endif;		
-
-
-
-		*/
-
-
-
-						
-
-
+	    $this->form_validation->set_rules('descripcion', 'Descripcion del empleo', 'required');	
+			    $this->form_validation->set_rules('direccion', 'Direccion', 'required');																
 
 	    $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
 
@@ -448,7 +299,7 @@ $this->form_validation->set_rules('salario', 'Monto del salario', 'trim|required
 
 
 
-$empleo_ID=$data['empleo_ID']=$this->uri->segment(3);
+$entrada_ID=$data['entrada_ID']=$this->uri->segment(3);
 
 
 
@@ -464,7 +315,7 @@ $empleo_ID=$data['empleo_ID']=$this->uri->segment(3);
 
 
 
-			$data['empleo']=$this->empleo->get($empleo_ID)->row_array();
+			$data['empleo']=$this->entradas->get($entrada_ID)->row_array();
 
 
       
@@ -569,7 +420,7 @@ $descripcion=strip_tags($this->input->post('descripcion'),'<strong><p><b><br><i>
 
 
 
-	        $this->db->where('ID',$empleo_ID);
+	        $this->db->where('ID',$entrada_ID);
 
 
 
@@ -593,7 +444,7 @@ $descripcion=strip_tags($this->input->post('descripcion'),'<strong><p><b><br><i>
 
 		actualizar_index_cache();
 
-		actualizar_oferta_cache($_POST['titulo'],$empleo_ID);
+		actualizar_oferta_cache($_POST['titulo'],$entrada_ID);
 
 		
 
@@ -874,7 +725,7 @@ return $r;
 
 
 $canal=$this->uri->segment(3);
-		if($canal):
+if($canal):
 $t=$this->db->select('claves')->limit(1)->where('nombre',$canal)->get('subdominios_base')->row_array();
 $claves='<label class="tag">'.str_replace(',','</label><label class="tag">',$t['claves']).'</label>';
 $data['canal']=$canal;
@@ -904,12 +755,13 @@ endif;
 		$data['ciudades']=$this->ciudad($t);
 
 
-$this->form_validation->set_rules('nombre_empresa', 'Nombre de empresa', 'required');
+
 		$this->form_validation->set_rules('titulo', 'Titulo del empleo', 'required');
     $this->form_validation->set_rules('email_contacto', 'Email de contacto', 'required|valid_email');
-    $this->form_validation->set_rules('vacantes', 'vacantes', 'required|numeric|is_natural_no_zero');
-	    $this->form_validation->set_rules('modalidades_ID', 'Modalidad del empleo', 'required|numeric');		
+
+		
 $this->form_validation->set_rules('categoria', 'categoria del empleo', 'required');
+$this->form_validation->set_rules('direccion', 'Direccion', 'required');
 
 	  //  $this->form_validation->set_rules('experiencia', 'Tiempo de experiencia', 'required');	
 
@@ -922,37 +774,9 @@ $this->form_validation->set_rules('categoria', 'categoria del empleo', 'required
 	  //  $this->form_validation->set_rules('experiencia_tipo', 'Tipo de experiencia', 'required');						
 
 
-		$this->form_validation->set_rules('email_asunto', 'Asunto en email', 'trim');								
+							
 
-
-	 //   $this->form_validation->set_rules('edada', 'Rango de edades (edad inferior)', 'required|is_natural_no_zero|callback_edada');								
-
-
-
-	 //   $this->form_validation->set_rules('edadb', 'Rango de edades (edad superior)', 'required|is_natural_no_zero');										
-
-	    $this->form_validation->set_rules('sexo', 'genero', 'required');	
-
-		$this->form_validation->set_rules('estado', 'estado de la publicacion', 'required');										
-
-
-
-	   // $this->form_validation->set_rules('salario_tipo', 'moneda del salario', 'required');										
-
-
-	   // $this->form_validation->set_rules('salario_2', 'Tipo del salario', 'required');	
-
-
-
-	//	if(isset($_POST['salario_2']) && $_POST['salario_2']==3):
-
-
-
-		$this->form_validation->set_rules('salario', 'Monto del salario', 'trim|required');												
-
-
-
-		//endif;												
+											
 
 
 
@@ -1073,7 +897,7 @@ $this->form_validation->set_rules('categoria', 'categoria del empleo', 'required
 
 	     $this->db->insert('entradas',$_POST);	        
 
-actualizar_index_cache();
+//actualizar_index_cache();
 
 	        redirect('home/listar');
 

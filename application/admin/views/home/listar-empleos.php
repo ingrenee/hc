@@ -1,5 +1,8 @@
-<h2>Tus empleos registrados</h2>
-<a href="<?PHP echo site_url('home/agregar');?>" class="tool agregar"> Agregar nuevo empleo</a>
+<div class="formulario">
+<h1>Tus cursos registrados</h1>
+
+
+<a href="<?PHP echo site_url('home/agregar');?>" class="tool agregar"> Agregar nuevo curso</a>
 
 
 
@@ -45,15 +48,9 @@
     <td><a href="<?PHP echo site_url('exportar/word/'.$v['ID']);?>"  class="herramienta word" >&nbsp;</a> | <a href="<?PHP echo site_url('exportar/txt/'.$v['ID']);?>"  class="herramienta txt" >&nbsp;</a></td>
     <td>
      
-    <?PHP 
-//	 echo $v['creado'];
-	//$creado=explode('-',$v['creado']);
-	$diff=(time()-strtotime($v['creado']));
-	if( $diff  < 2*24*60*60 ):?>
-    <a href="<?PHP echo site_url('home/editar_empleo/'.$v['ID']);?>" class="tool editar">Editar <span style="font-size:10px">(<?PHP echo tiempo_detalle(2*24*60*60-$diff);?>)</span></a>
-   <?PHP else:?>
-  Edici&oacute;n cerrada hace <?PHP echo round($diff/(24*60*60)-2)?> dias
-   <?PHP endif;?>
+ 
+    <a href="<?PHP echo site_url('home/editar_entrada/'.$v['ID']);?>" class="tool editar">Editar </a>
+
     </td>
     <!-- 
     <td><a href="<?PHP //echo site_url('home/borrar_empleo/'.$v['ID']);?>"  onclick="return  confirm('Esta seguro de borrar esta oferta de empleo.?');"class="tool borrar">Borrar</a></td>
@@ -66,4 +63,6 @@
 </div>
 <div class="paginacion">
 <?PHP echo $paginacion;?>
+</div>
+
 </div>

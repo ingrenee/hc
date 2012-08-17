@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','login_auth','native_session','form_validation','lib_usuarios','sucesos','empleador');
+$autoload['libraries'] = array('database','login_auth','native_session','form_validation','lib_usuarios','sucesos','empleador','entradas');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','login_auth','native_session','form_va
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','my_funciones_helper','my_mensajes_helper');
+$autoload['helper'] = array('url','my_funciones_helper','my_mensajes_helper','hayempleo_helper');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('login_auth_model');
+$autoload['model'] = array('login_auth_model','entradas_model');
 
 
 /* End of file autoload.php */

@@ -184,8 +184,9 @@ document.getElementById(ulul).removeChild(id);
 
 
 <div class="formulario">
-<h1>Agregar Nuevo curso</h1>
-
+<div  class="nav">
+<h1>Agregar Nuevo curso</h1> <h2>>> Informacion básica</h2>
+</div>
 
 
 <form id="form1" name="form1" method="post" action="<?PHP

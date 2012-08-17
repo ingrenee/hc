@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="<?PHP echo base_url('js/tinybox2/style.css');?>" />
 <script type="text/javascript" src="<?PHP echo base_url('js/tinybox2/tinybox.js');?>"></script>
 
+<div class="fila">
+<?php echo validation_errors(); ?>
+</div>
 
   <div class="fila">
 
@@ -340,10 +343,10 @@ Moneda del salario
 </div>
 <div class="fila">
   
-  <div class="colu_1" ><?PHP _ayuda('contenido');?>Descripci&oacute;n del curso: <br />
-  <br />
-  *<span style="color:#0182ac;">Por favor sea ordenado, y claro separe con saltos de linea el texto que ingresar&aacute;, tratando que sea f&aacute;cil de leer.Puede utilizar negritas.</span><br />
-  <br /><input type="text"  id="lengthBox"  style="width:70px;"/>
+  <div class="colu_1" ><?PHP _ayuda('contenido');?>Descripci&oacute;n del curso: 
+  </div>
+  <div class="colu_2">
+  <input type="text"  id="lengthBox"  style="width:70px;"/>
   <?PHP 
 $canal=$this->native_session->userdata('_canal_');
 if(isset($canal)&& $canal):?>
@@ -370,16 +373,8 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
        ><?PHP  echo _e($empleo,'descripcion');?><?PHP echo _e($empleo,'requisitos');?></textarea>
 
     <span class="subfila"><?PHP echo form_error('descripcion');?></span>
-    <label for="lengthBox"></label>
-    <div id="funciones_trabajo">
-
-      <ul id="funciones">
-
-
-
-</ul>
-
-</div>
+  
+    
 
 </div>
 
@@ -454,7 +449,8 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
   <div class="colu_1"><?PHP _ayuda('direccion');?>Direccion:
   </div>
    <div class="colu_2">
-   <?PHP echo form_input('direccion',set_value('direccion'));
+   <?PHP echo form_input('direccion',_e($empleo,'direccion'));
+
     echo form_error('direccion');
    ?>
    
