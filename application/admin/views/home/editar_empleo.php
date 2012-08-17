@@ -152,9 +152,10 @@ document.getElementById(ulul).removeChild(id);
 
 <div class="formulario">
 
-
-
-<h2>Editar Oferta de Empleo</h2>
+<div class="nav">
+<h1>Editar curso</h1>
+<h2>Informacion basica <span>(Editando) </span></h2>
+</div>
 <form id="form1" name="form1" method="post" action="<?PHP
 site_url('home/editar_entrada/'.$entrada_ID)?>">
   

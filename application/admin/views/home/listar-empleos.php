@@ -1,6 +1,9 @@
 <div class="formulario">
-<h1>Tus cursos registrados</h1>
+<div class="nav">
+<h1>Lista de  cursos</h1>
+<h2>Tus cursos registrados</h2>
 
+</div>
 
 <a href="<?PHP echo site_url('home/agregar');?>" class="tool agregar"> Agregar nuevo curso</a>
 
@@ -19,10 +22,10 @@
 <div id="lista">
 <table width="200" border="0" cellpadding="4" cellspacing="0">
   <tr>
-    <th>#</th>
-    <th>Visitas</th>
-    <th>Titulo</th>
-    <th>Estado</th>
+    <th width="20">#</th>
+    <th width="35">Hits</th>
+    <th width="300">Titulo</th>
+    <th width="30">Estado</th>
 
     <th>Exportar</th>
     <th>&nbsp;</th>
@@ -41,21 +44,34 @@
 	
 	if($tmp=='pendiente'):
 	$tmp='No publicado';
+	else:
+	$tmp='Publicado';
 	endif;
 	 echo $tmp;
 	?></span></a></td>
 
+<!--
     <td><a href="<?PHP echo site_url('exportar/word/'.$v['ID']);?>"  class="herramienta word" >&nbsp;</a> | <a href="<?PHP echo site_url('exportar/txt/'.$v['ID']);?>"  class="herramienta txt" >&nbsp;</a></td>
+    -->
+    
+    <td>
+    <div class="botones">
+    <a href="#">Inf. Basica</a><a href="#">Inf. de contacto</a>
+    <a href="#">Horarios</a>
+    <a href="#">Temario</a>
+    <a href="#">Ubicacion</a>
+    <a href="#">Precio</a>
+    <a href="#">ponentes</a>
+    </div>
+    </td>
+    
     <td>
      
  
     <a href="<?PHP echo site_url('home/editar_entrada/'.$v['ID']);?>" class="tool editar">Editar </a>
 
     </td>
-    <!-- 
-    <td><a href="<?PHP //echo site_url('home/borrar_empleo/'.$v['ID']);?>"  onclick="return  confirm('Esta seguro de borrar esta oferta de empleo.?');"class="tool borrar">Borrar</a></td>
-    
-    -->
+ 
     </tr>
   <?PHP endforeach;?>
   </table>
