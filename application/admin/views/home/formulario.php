@@ -10,6 +10,18 @@
 <?php echo validation_errors(); ?>
 </div>
 
+<div class="fila">
+<div class="colu_1"><?PHP _ayuda('tipos_ID');?>Clasificación</div>
+<div class="colu_2">
+<?PHP echo form_dropdown('tipos_ID',$tipos,_e($empleo,'tipos_ID'));?>
+<?PHP echo form_error('tipos_ID');?>
+</div>
+
+
+
+</div>
+
+
   <div class="fila">
 
   <div class="colu_1"><?PHP _ayuda('titulo');?>T&iacute;tulo del curso</div>
