@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','login_auth','native_session','form_va
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','my_funciones_helper','my_mensajes_helper','hayempleo_helper');
+$autoload['helper'] = array('url','my_funciones_helper','my_mensajes_helper','hayempleo_helper','my_select_rmmc_helper');
 
 
 /*

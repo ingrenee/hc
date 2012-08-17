@@ -5,15 +5,19 @@
 
 <link rel="stylesheet" href="<?PHP echo base_url('js/tinybox2/style.css');?>" />
 <script type="text/javascript" src="<?PHP echo base_url('js/tinybox2/tinybox.js');?>"></script>
+<script src="<?PHP echo base_url('js/jquery.maskedinput-1.3.min.js');?>" type="text/javascript"></script>
+
+<script>
+
+</script>
+
+
+
 
 <div class="fila">
-<?php echo validation_errors(); ?>
+<div class="colu_1"><?PHP _ayuda('tipos_ID');?>Clasificación <?PHP echo form_dropdown('tipos_ID',$tipos,_e($empleo,'tipos_ID'));?>
 </div>
-
-<div class="fila">
-<div class="colu_1"><?PHP _ayuda('tipos_ID');?>Clasificación</div>
 <div class="colu_2">
-<?PHP echo form_dropdown('tipos_ID',$tipos,_e($empleo,'tipos_ID'));?>
 <?PHP echo form_error('tipos_ID');?>
 </div>
 
@@ -393,26 +397,30 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
 </div>
 
 <div class="fila">
-
-  <div class="colu_1"><?PHP _ayuda('email_contacto');?>Email de contacto :</div>
-
-
-
-<div class="colu_2">
-
-  <input name="email_contacto" type="text" class="caja largo" id="email_contacto" value="<?PHP 
+<div class="colu_1"><?PHP _ayuda('email_contacto');?>Precio público general  <input name="precio" type="text" class="caja " style="width:80px" id="precio" value="<?PHP 
 
 		
 
-		echo _e($empleo,'email_contacto');
+		echo _e($empleo,'precio');
 
 		
 
 		?>" size="50" maxlength="50" />
+        | Incluye IGV ? <?PHP 
+		$tmp['']='Seleccione';
+		$tmp[1]='Si';
+		$tmp[0]='No';
+		
+		echo form_dropdown('igv',$tmp,_e($empleo,'igv'));?>
+        
+  </div>
+<div class="colu_2"> <?PHP echo form_error('precio');?> <?PHP echo form_error('igv');?></div>
 
-  <span class="subfila"><?PHP echo form_error('email_contacto');?></span></div>
+</div>
 
-</div><div class="fila">
+
+<!--
+<div class="fila">
 
   <div class="colu_1"><?PHP _ayuda('ubicacion');?>Ubicaci&oacute;n<span id="ciudad">
 
@@ -457,17 +465,58 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
     </div>
 
   </div>
+  
+  
+  -->
+  
+  
   <div class="fila">
-  <div class="colu_1"><?PHP _ayuda('direccion');?>Direccion:
+  <div class="colu_1"><?PHP _ayuda('fecha_inicio');?>Fecha de inicio
+  
+  <?PHP
+  echo form_input('fecha_inicio',_e($empleo,'fecha_inicio'),' id="fecha_inicio" style=" width:75px;"');
+  ?>  | Duración 
+  
+<input name="duracion" id="duracion" type="text" style="width:30px;" value="<?PHP echo _e($empleo,'duraccion');?>" maxlength="2"> |
+<?PHP
+$duracion_tipo['']='Seleccione';
+$duracion_tipo['dias']='dias';
+$duracion_tipo['semanas']='Semanas';
+$duracion_tipo['meses']='Meses';
+$duracion_tipo['anio']='Años';
+
+echo form_dropdown('duracion_tipo',$duracion_tipo,_e($empleo,'duracion_tipo'));
+
+?>
   </div>
    <div class="colu_2">
-   <?PHP echo form_input('direccion',_e($empleo,'direccion'));
+   <?PHP 
 
-    echo form_error('direccion');
+    echo form_error('fecha_inicio');
    ?>
+   <?PHP 
+
+    echo form_error('duracion');
+	    echo form_error('duracion_tipo');
+   ?>
+  </div>
+  </div>
+  
+  
+    <div class="fila">
+  <div class="colu_1">
+
+  </div>
+   <div class="colu_2">
+   
    
   </div>
   </div>
+  
+  
+  
+
+  
 <input type="submit" value="Guardar" id="guardar"  class="boton"/>
 
   <script type="text/javascript" src="<?PHP echo base_url('js/jscripts/tiny_mce/tiny_mce.js');?>"></script>
@@ -482,7 +531,13 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
 
 
 $(document).ready(function() {
-  $("#salario").val('<?PHP echo @_e($empleo,'salario'); ?>');
+ // $("#salario").val('<?PHP echo @_e($empleo,'salario'); ?>');
+ 
+ jQuery(function($){
+   $("input#fecha_inicio").mask("99/99/9999");
+    $("input#duracion").mask("99");
+   
+});
 });
 
 
