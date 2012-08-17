@@ -4,7 +4,7 @@
 div.formulario
 {
 	font-family: Tahoma, Geneva, sans-serif;
-	margin-left: 20px;
+	margin-left: 0px;
 }
 .error
 {
@@ -17,7 +17,9 @@ div.formulario h1
 {}
 
 div.formulario div.fila
-{}
+{
+	margin-left: 20px;
+}
 div.formulario div.fila div.colu_1,
 div.formulario div.fila div.colu_2
 {

@@ -92,7 +92,7 @@ $arr[14]='Otros';
  endif;
  
    foreach($arr as $k => $v):?>
-   <?PHP if($k%4==0):?>
+   <?PHP if(($k+2)%3==0):?>
    </td><td valign="top">
    <?PHP endif;?>
      <?PHP 

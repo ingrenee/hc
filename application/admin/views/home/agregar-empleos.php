@@ -185,7 +185,7 @@ document.getElementById(ulul).removeChild(id);
 
 <div class="formulario">
 <div  class="nav">
-<h1>Agregar Nuevo curso</h1> <h2>>> Informacion básica</h2>
+<h1>Agregar Nuevo curso</h1> <h2>Información básica</h2>
 </div>
 
 
