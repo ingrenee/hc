@@ -15,10 +15,10 @@
 
 
 <div class="fila">
-<div class="colu_1"><?PHP _ayuda('tipos_ID');?>Clasificación <?PHP echo form_dropdown('tipos_ID',$tipos,_e($empleo,'tipos_ID'));?>
+<div class="colu_1"><?PHP _ayuda('tipos_ID');?>Clasificación <?PHP echo form_dropdown('tipos_ID',$tipos,_e($empleo,'tipos_ID'));?>  <?PHP echo form_error('tipos_ID');?>
 </div>
 <div class="colu_2">
-<?PHP echo form_error('tipos_ID');?>
+
 </div>
 
 
@@ -28,7 +28,7 @@
 
   <div class="fila">
 
-  <div class="colu_1"><?PHP _ayuda('titulo');?>T&iacute;tulo del curso</div>
+  <div class="colu_1"><?PHP _ayuda('titulo');?>T&iacute;tulo del curso <?PHP echo form_error('titulo');?></div>
 
 
 
@@ -36,7 +36,7 @@
 
   <input name="titulo" type="text"  class="caja largo" id="titulo" value="<?PHP echo _e($empleo,'titulo');//$empleo["titulo"];?>" maxlength="50" />
 
-   <?PHP echo form_error('titulo');?>
+   
 
 </div>
 
@@ -88,7 +88,7 @@ $arr[14]='Otros';
 
 <div class="fila">
 
-  <div class="colu_1"><?PHP _ayuda('categoria');?>Categoria del curso</div>
+  <div class="colu_1"><?PHP _ayuda('categoria');?>Categoria del curso   <?PHP echo form_error('categoria');?></div>
 
 
 
@@ -108,7 +108,7 @@ $arr[14]='Otros';
  endif;
  
    foreach($arr as $k => $v):?>
-   <?PHP if(($k+2)%3==0):?>
+   <?PHP if(($k+3)%4==0):?>
    </td><td valign="top">
    <?PHP endif;?>
      <?PHP 
@@ -123,7 +123,7 @@ $arr[14]='Otros';
 </table>
   <?PHP //echo form_dropdown('categoria',$arr,_e($empleo,'categoria'));?>
 
-   <?PHP echo form_error('categoria');?>
+ 
 
 </div>
 
@@ -359,7 +359,7 @@ Moneda del salario
 </div>
 <div class="fila">
   
-  <div class="colu_1" ><?PHP _ayuda('contenido');?>Descripci&oacute;n del curso: 
+  <div class="colu_1" ><?PHP _ayuda('contenido');?>Descripci&oacute;n del curso  <?PHP echo form_error('descripcion');?>
   </div>
   <div class="colu_2">
   <input type="text"  id="lengthBox"  style="width:70px;"/>
@@ -388,7 +388,7 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
 
        ><?PHP  echo _e($empleo,'descripcion');?><?PHP echo _e($empleo,'requisitos');?></textarea>
 
-    <span class="subfila"><?PHP echo form_error('descripcion');?></span>
+    <span class="subfila"></span>
   
     
 
@@ -397,7 +397,8 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
 </div>
 
 <div class="fila">
-<div class="colu_1"><?PHP _ayuda('email_contacto');?>Precio público general  <input name="precio" type="text" class="caja " style="width:80px" id="precio" value="<?PHP 
+<div class="colu_1"><?PHP _ayuda('email_contacto');?>Precio público general S/. 
+  <input name="precio" type="text" class="caja " style="width:80px" id="precio" value="<?PHP 
 
 		
 
@@ -474,10 +475,13 @@ Si deseas que tus ofertas se muestren en : <label class="canal">http://<?PHP ech
   <div class="colu_1"><?PHP _ayuda('fecha_inicio');?>Fecha de inicio
   
   <?PHP
+  if(isset($empleo['fecha_inicio'])):
+  $empleo['fecha_inicio']=date('d/m/Y',strtotime($empleo['fecha_inicio']));
+  endif;
   echo form_input('fecha_inicio',_e($empleo,'fecha_inicio'),' id="fecha_inicio" style=" width:75px;"');
   ?>  | Duración 
   
-<input name="duracion" id="duracion" type="text" style="width:30px;" value="<?PHP echo _e($empleo,'duraccion');?>" maxlength="2"> |
+<input name="duracion" id="duracion" type="text" style="width:30px;" value="<?PHP echo _e($empleo,'duracion');?>" maxlength="2"> |
 <?PHP
 $duracion_tipo['']='Seleccione';
 $duracion_tipo['dias']='dias';

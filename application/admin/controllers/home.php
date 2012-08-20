@@ -52,7 +52,7 @@ class Home extends CI_Controller
 								$data['tipos']=_crea_array($this->lib_tipos->obtener());
 															
                                 $this->form_validation->set_rules('tipos_ID', 'tipos', 'required');
-                                $this->form_validation->set_rules('departamento', 'ciudad', 'required');
+
                                 $this->form_validation->set_rules('titulo', 'Titulo del empleo', 'required');
                                 $this->form_validation->set_rules('categoria', 'categoria del empleo', 'required');
                                 $this->form_validation->set_rules('duracion', 'duración del curso', 'trim|required|numeric');
@@ -61,7 +61,7 @@ class Home extends CI_Controller
                                 $this->form_validation->set_rules('igv', 'IGV', 'trim|required');
                                 $this->form_validation->set_rules('descripcion', 'Descripcion del empleo', 'required');
                                 $this->form_validation->set_rules('fecha_inicio', 'fecha de inicio', 'trim|required|callback_fecha_inicio');
-                                $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
+                                $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
                                 $data['usuario'] = $tmp = $this->native_session->userdata('login_datos');
                                 //        print_r($tmp);  
                                 $entrada_ID      = $data['entrada_ID'] = $this->uri->segment(3);
@@ -103,9 +103,10 @@ class Home extends CI_Controller
                                                 $_POST['descripcion'] = $descripcion;
                                                 $_POST['categoria']   = aplana($_POST['categoria']);
                                                 $_POST['titulo']      = strip_tags($this->input->post('titulo', true));
+												$_POST['fecha_inicio']=date('Y-m-d',strtotime(str_replace('/','-',$_POST['fecha_inicio'])));
                                                 $this->db->where('ID', $entrada_ID);
                                                 $this->db->update('entradas', $_POST);
-                                                $this->native_session->set_flashdata('mensaje', 'La oferta de empleo fue actualizada.');
+												_set_mensajes('El registro fue actualizado.',true);
                                                 // $register = $this->redux_auth->register($username, $password, $email);
                                                 //         echo BASEPATH;
                                                 //       echo "--";
@@ -203,7 +204,7 @@ class Home extends CI_Controller
                                 $this->form_validation->set_rules('fecha_inicio', 'fecha de inicio', 'trim|required|callback_fecha_inicio');
                                 //  $this->form_validation->set_rules('experiencia_tipo', 'Tipo de experiencia', 'required');                        
                                 $this->form_validation->set_rules('descripcion', 'Descripcion del empleo', 'required');
-                                $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
+                                $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
                                 $data['usuario'] = $tmp = $this->native_session->userdata('login_datos');
                                 //print_r($tmp);  
                                 if ($this->form_validation->run() == false)
@@ -237,7 +238,8 @@ class Home extends CI_Controller
                                                 $descripcion .= $tags;
                                                 /**/
                                                 $_POST['descripcion'] = $descripcion;
-                                                $_POST['titulo']      = strip_tags($this->input->post('titulo', true));
+                                                $_POST['titulo']      = strip_tags($this->input->post('titulo', true));											
+												$_POST['fecha_inicio']=date('Y-m-d',strtotime(str_replace('/','-',$_POST['fecha_inicio'])));
                                                 $this->db->insert('entradas', $_POST);
                                                 //actualizar_index_cache();
                                                 redirect('home/listar');

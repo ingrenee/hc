@@ -10,6 +10,13 @@
 <script type="text/javascript" src="<?PHP  echo base_url('/html/rload.js');?>"></script>
 <script>
 $(function() {
+	
+	
+	if ($('.mensaje_sistema').length) {
+ 
+$('div.mensaje_sistema').fadeOut(3500);
+ 
+}
  $('a.boton').click(function(){
 	 
 	 id=$(this).attr('id');

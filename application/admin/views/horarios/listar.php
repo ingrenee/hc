@@ -1,7 +1,8 @@
 <div class="formulario">
 <div class="nav">
-<h1>Lista de  cursos</h1>
-<h2>Tus cursos registrados</h2>
+<h1>Horarios</h1>
+<h1><?PHP echo $info['titulo'];?></h1>
+<h2>Tus horarios registrados</h2>
 
 </div>
 
@@ -30,7 +31,7 @@
     <th>&nbsp;</th>
    
   </tr>
-  <?PHP foreach($empleos->result_array() as $k => $v):?>
+  <?PHP foreach($entradas->result_array() as $k => $v):?>
   <tr>
     <td><?PHP echo $v['ID'];?></td>
     <td><?PHP echo (int)$v['contador'];?></td>
@@ -56,7 +57,7 @@
     <td>
     <div class="botones">
     <a href="#">Inf. Basica</a><a href="#">Inf. de contacto</a>
-    <a href="<?PHP echo site_url('horarios/index/'.$v['ID']);?>">Horarios</a>
+    <a href="#">Horarios</a>
     <a href="#">Temario</a>
     <a href="#">Ubicacion</a>
     <a href="#">Precio</a>

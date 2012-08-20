@@ -706,11 +706,12 @@ div.paginacion a:hover
 
 span.error
 {
-	padding-right: 1px;
-	padding-left: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
 	color: #F4F4F4;
 	background-color: #F00;
 	border: 1px solid #FFF;
+	font-size: 12px;
 }
 
 div.consulta h1
@@ -1058,3 +1059,47 @@ div#progreso span
 	float: left;
 	background-color: #099;
 }
+table.horario
+{
+	border: 1px solid #CCC;
+	width: 500px;
+}
+
+table.horario tr th.sup
+{
+	background-color: #CCC;
+}
+
+table.horario tr th.izq
+{
+	background-color: #E1E1E1;
+}
+table.horario tr td  label
+{
+	display: block;
+}
+table.horario tr td 
+{
+	width: 10%;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+
+table.horario tr:hover td,table.horario tr:hover th
+{
+	background-color: #FF0;
+}
+table.horario tr:hover td:hover
+{
+	background-color: #CCC;
+}
+

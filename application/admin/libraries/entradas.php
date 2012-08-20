@@ -56,6 +56,10 @@ public function get($id)
 		}
 		
 		
+		function  obtener_uno($id)
+		{ return $this->get($id);
+			}
+		
 		
 	public function actualizar($id,$w)
 	{

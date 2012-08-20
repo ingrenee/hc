@@ -9,7 +9,9 @@ function _mensajes()
 	if($t):
 	
 	if(!$tipo):
-	$tipo="error";
+	$tipo='erroneo';
+	else:
+	$tipo='correcto';
 	endif;
 	
 	echo '<div class="mensaje_sistema '.$tipo.'">';
@@ -22,11 +24,7 @@ function _mensajes()
 	function _set_mensajes($t,$tipo=false)
 	{$ci= &get_instance();
 		$ci->native_session->set_flashdata('mensaje',$t);
-		if($tipo):
-		$tipo='correcto';
-		else:
-		$tipo='error';
-		endif;
+		
 		$ci->native_session->set_flashdata('mensaje_tipo',$tipo);		
 		}
 	

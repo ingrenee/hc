@@ -48,12 +48,24 @@ div.formulario div.fila input[type=checkbox]
 	padding: 2px;
 	margin-right: 3px;
 }
+
 div.formulario div.fila input[type=text]
 {
 	padding: 5px;
 	border: 1px solid #CCC;
 	width: 90%;
 }
+
+div.formulario div.fila input[type=text]:hover
+{
+	background-color: #f3f3f3;
+}
+
+div.formulario div.fila input[type=text]:focus
+{
+	border: 1px solid #000000;
+}
+
 a.ayuda
 {
 	background-image: url(../images/gray_18/help.png);
@@ -89,4 +101,52 @@ div.botones a
 	background-image: url(../images/gray_18/checkmark2.png);
 	background-repeat: no-repeat;
 	background-position: right center;
+}
+input.boton:hover
+{
+	background-color: #4595DC;
+}
+input.boton
+{
+	background-color: #2882d0;
+	display: inline-block;
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	color: #FFF;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	font-size: 20px;
+}
+
+div.mensaje_sistema
+{
+	display: block;
+	text-align: center;
+	width: 80%;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	font-size: 16px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+div.correcto
+{
+	background-color: #093;
+	color: #FFF;
+}div.erroneo
+{
+	background-color: #F00;
+	color: #FFF;
 }
