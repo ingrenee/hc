@@ -57,7 +57,7 @@ class Horarios extends CI_Controller {
 	function  agregar()
 	{
 		$entrada_ID=$this->uri->segment(3);
-		
+		/*obteniendo informacion del curso*/
 		$info=$this->entradas->obtener_uno($entrada_ID);
 		//var_dump($info);
 		if(($info->num_rows())<=0):
@@ -65,11 +65,11 @@ class Horarios extends CI_Controller {
 		exit();
 		endif;
 		
-		 echo "<pre>";
-		print_r($_POST);
-		echo "</pre>";
+		
 		$data=array();
-		      
+		
+								$data['horario']=$this->input->post('horario');
+		      					/*informacion del curso*/
 			  					$data['info']=$info->row_array();
 			                    $data['content']    = $this->load->view('horarios/agregar', $data, true);
                                 $this->load->view('panel', $data);
